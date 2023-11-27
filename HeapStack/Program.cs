@@ -20,7 +20,7 @@ public class Program
 
         //out writeOnly 
 
-        //int number = 100;
+        //int number = 100; 
         //ChangeNumber(out number);
         //Console.WriteLine(number);
 
@@ -36,10 +36,27 @@ public class Program
         student.Name = "Piter";
         Console.WriteLine(student.Name);
         Console.WriteLine(ChangeName(student));
-           
 
+        Console.WriteLine("Please enter seconds....");
+        var second = int.Parse(Console.ReadLine());
+        ConvertSecondToHour(ref second);
+        Console.WriteLine($"Equal to {second}  hours");
 
+        int minutes = 90;
+        ConvertMinutesToSeconds(out minutes);
+        Console.WriteLine($"90 minutes is equal to {minutes} seconds");
 
+        Console.WriteLine();
+    }
+
+    static void ConvertSecondToHour(ref int second)
+    {
+        second /= 3600;
+    }
+
+    static void ConvertMinutesToSeconds(out int minutes)
+    {
+        minutes = 5400;
     }
 
     //static bool ChangeNumber(int num)
@@ -74,7 +91,7 @@ public class Program
     {
         return st.Name = "jak";
     }
-        
+
 }
 
 
