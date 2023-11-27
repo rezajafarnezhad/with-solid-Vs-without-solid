@@ -1,9 +1,12 @@
-﻿namespace HeapStack.@ref.@out.@in;
+﻿using BenchmarkDotNet.Running;
+
+namespace HeapStack.@ref.@out.@in;
 
 public class Program
 {
     static void Main(string[] args)
     {
+       
 
         //int number = 100;
         //ChangeNumber(number);
