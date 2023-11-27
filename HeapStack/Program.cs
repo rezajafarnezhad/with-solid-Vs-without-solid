@@ -8,16 +8,28 @@ public class Program
         //int number = 100;
         //ChangeNumber(number);
         //Console.WriteLine(number);
-        //
-        ///
+
+
+
+        //Ref
+
         //int number = 100;
         //ChangeNumber(ref number);
         //Console.WriteLine(number);
 
-        
-        int number = 100;
-        ChangeNumber(in number);
-        Console.WriteLine(number);
+
+        //out writeOnly 
+
+        //int number = 100;
+        //ChangeNumber(out number);
+        //Console.WriteLine(number);
+
+
+        //in readOnly
+
+        //int number = 100;
+        //ChangeNumber(in number);
+        //Console.WriteLine(number);
 
 
         var student = new Student();
@@ -45,18 +57,18 @@ public class Program
 
     //static bool ChangeNumber(out int num)
     //{
-    //    num++;
+    //   // num++; //invalid
     //    num = 200;
     //    return true;
     //}
 
-    static bool ChangeNumber(in int num) //num is readOnly
-    {
-        //num++;
-        //num = 1000;
-        Console.WriteLine(num);
-        return true;
-    }
+    //static bool ChangeNumber(in int num) //num is readOnly
+    //{
+    //    //num++;//invalid
+    //    //num = 1000;//invalid
+    //    Console.WriteLine(num);
+    //    return true;
+    //}
 
     static string ChangeName(Student st)
     {
