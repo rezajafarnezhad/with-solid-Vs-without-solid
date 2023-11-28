@@ -1,7 +1,5 @@
-﻿using System.ComponentModel;
-
-namespace LSP
-{
+﻿namespace LSP
+{ 
     public class Customer
     {
         public int CustomerType { get; set; }

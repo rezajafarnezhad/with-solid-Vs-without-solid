@@ -11,6 +11,7 @@ internal class Program
         Console.WriteLine("Urban Area Three => Enter Number : 3 ");
         Console.WriteLine("City Center => Enter Number : 4 ");
         Console.WriteLine("Other Urban Areas => Enter Number : 5 ");
+
         var area = Console.ReadLine();
         Console.WriteLine("Now, enter the house area in square meters.....");
         var squareMeters = int.Parse(Console.ReadLine());

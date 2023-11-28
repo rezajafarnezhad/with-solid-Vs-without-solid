@@ -12,25 +12,18 @@ public class Program
         //int number = 100;
         //ChangeNumber(number);
         //Console.WriteLine(number);
-
-
-
+        
         //Ref
-
         //int number = 100;
         //ChangeNumber(ref number);
         //Console.WriteLine(number);
 
-
         //out writeOnly 
-
         //int number = 100; 
         //ChangeNumber(out number);
         //Console.WriteLine(number);
 
-
         //in readOnly
-
         //int number = 100;
         //ChangeNumber(in number);
         //Console.WriteLine(number);
@@ -46,42 +39,35 @@ public class Program
         ConvertSecondToHour(ref second);
         Console.WriteLine($"Equal to {second}  hours");
         int s = 30;
-       
+
         ConvertMinutesToSeconds(out var minutes);
         Console.WriteLine($"90 minutes is equal to {minutes} seconds");
         Console.WriteLine();
     }
-
     static void ConvertSecondToHour(ref int second)
     {
         second /= 3600;
     }
-
     static void ConvertMinutesToSeconds(out int minutes)
     {
         minutes = 5400;
     }
-
     //static bool ChangeNumber(int num)
     //{
     //    num++;
     //    return true;
     //}
-
-
     //static bool ChangeNumber(ref int num)
     //{
     //    num++;
     //    return true;
     //}
-
     //static bool ChangeNumber(out int num)
     //{
     //   // num++; //invalid
     //    num = 200;
     //    return true;
     //}
-
     //static bool ChangeNumber(in int num) //num is readOnly
     //{
     //    //num++;//invalid
@@ -89,14 +75,11 @@ public class Program
     //    Console.WriteLine(num);
     //    return true;
     //}
-
     static string ChangeName(Student st)
     {
         return st.Name = "jak";
     }
 }
-
-
 public class Student
 {
     public string Name { get; set; }
