@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISP", "ISP\ISP.csproj", "{E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIP", "DIP\DIP.csproj", "{90FB61D8-09A1-40D0-A228-E1AD2E18BCEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapStack.ref.out.in", "HeapStack\HeapStack.ref.out.in.csproj", "{E2774F13-77ED-4658-B4A5-5853F497B3C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeapStack.ref.out.in", "HeapStack\HeapStack.ref.out.in.csproj", "{E2774F13-77ED-4658-B4A5-5853F497B3C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static", "Static\Static.csproj", "{574F979B-07B5-4D0E-A813-60AC0BF789CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Static", "Static\Static.csproj", "{574F979B-07B5-4D0E-A813-60AC0BF789CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDispose", "IDispose\IDispose.csproj", "{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{574F979B-07B5-4D0E-A813-60AC0BF789CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{574F979B-07B5-4D0E-A813-60AC0BF789CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{574F979B-07B5-4D0E-A813-60AC0BF789CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

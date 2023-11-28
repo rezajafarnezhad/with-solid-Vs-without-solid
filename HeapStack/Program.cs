@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Running;
+﻿using System.Security.AccessControl;
+using BenchmarkDotNet.Running;
 
 namespace HeapStack.@ref.@out.@in;
 
@@ -33,7 +34,7 @@ public class Program
         //int number = 100;
         //ChangeNumber(in number);
         //Console.WriteLine(number);
-
+        
 
         var student = new Student();
         student.Name = "Piter";
@@ -44,11 +45,10 @@ public class Program
         var second = int.Parse(Console.ReadLine());
         ConvertSecondToHour(ref second);
         Console.WriteLine($"Equal to {second}  hours");
-
-        int minutes = 90;
-        ConvertMinutesToSeconds(out minutes);
+        int s = 30;
+       
+        ConvertMinutesToSeconds(out var minutes);
         Console.WriteLine($"90 minutes is equal to {minutes} seconds");
-
         Console.WriteLine();
     }
 
@@ -94,7 +94,6 @@ public class Program
     {
         return st.Name = "jak";
     }
-
 }
 
 
