@@ -20,4 +20,5 @@ internal class Program
         var result = house.CalculatePrice();
         Console.WriteLine($"The approximate price for a house in your selected area is  {result:N0} Tomans.");
     }
+    public record MyRecode(string Name ,string Family,byte Age );
 }

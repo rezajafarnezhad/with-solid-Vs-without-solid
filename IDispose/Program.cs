@@ -26,8 +26,10 @@ public class Photo  : IDisposable
 
     public void Display()
     {
+
         Console.WriteLine($"Displaying photo:{Name}");
     }
+
     public void Dispose()
     {
     }
@@ -62,7 +64,7 @@ public class Gallery : IDisposable
         Dispose(true);
         GC.SuppressFinalize(this);
     }
-
+  
 
     protected virtual void Dispose(bool disposing)
     {
@@ -86,3 +88,32 @@ public class Gallery : IDisposable
     }
 }
 
+
+
+interface ITest:IDisposable
+{
+
+    
+}
+class Test:ITest
+{
+    public void Dispose()
+    {
+    }
+}
+
+
+
+public class d
+{
+    public d(string dd, string ssss)
+    {
+        this.dd = dd;
+        this.ssss = ssss;
+    }
+
+    public string dd { get; set; }
+    public string ssss { get; set; }
+
+
+}

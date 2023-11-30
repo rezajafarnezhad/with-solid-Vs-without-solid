@@ -38,12 +38,12 @@ public class Program
         var second = int.Parse(Console.ReadLine());
         ConvertSecondToHour(ref second);
         Console.WriteLine($"Equal to {second}  hours");
-        int s = 30;
 
         ConvertMinutesToSeconds(out var minutes);
         Console.WriteLine($"90 minutes is equal to {minutes} seconds");
         Console.WriteLine();
     }
+
     static void ConvertSecondToHour(ref int second)
     {
         second /= 3600;
