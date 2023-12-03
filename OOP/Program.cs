@@ -1,8 +1,4 @@
-﻿using System.Data.Common;
-using System.Reflection.PortableExecutable;
-using System.Xml;
-
-namespace OOP
+﻿namespace OOP
 {
     internal class Program
     {
@@ -11,13 +7,13 @@ namespace OOP
             Console.WriteLine("Hello, World!");
 
 
-            var student = new Student("Ali",3,"Reyazi");
+            var student = new Student("Ali", 3, "Reyazi");
 
             Console.WriteLine(student.Name);
             Console.WriteLine(student.Age);
             Console.WriteLine(student.Couse);
 
-            student.GetAndShowStudents("Ali","Hamid","Mohammad","Reza");
+            student.GetAndShowStudents("Ali", "Hamid", "Mohammad", "Reza");
             var students = new List<string>()
             {
                 "Ali", "Hamid", "Mohammad", "Reza"
@@ -28,7 +24,7 @@ namespace OOP
 
             var _c = new Computer("Hp", "2019");
             _c.Year("20200");
-            var _m = new Mobile("Asus","2020");
+            var _m = new Mobile("Asus", "2020");
             _m.Application = "insta";
             _m.Year("838483");
 
@@ -42,7 +38,7 @@ namespace OOP
 
 
             var strudentIntest = new strudentIntest();
-          
+
             ITeacher Iteacher = strudentIntest;
             Iteacher.GetStr();
 
@@ -50,14 +46,14 @@ namespace OOP
             isStudent.GetStr();
 
             AutomobileVehicle authAutomobileVehicle = new AutomobileVehicle();
-            authAutomobileVehicle.GetInfo("Benz","280");
+            authAutomobileVehicle.GetInfo("Benz", "280");
 
             MetroVehicle metroVehicle = new MetroVehicle();
-            metroVehicle.GetInfo("Metro Karaj","430");
+            metroVehicle.GetInfo("Metro Karaj", "430");
 
 
             AirplaneVehicle airplaneVehicle = new AirplaneVehicle();
-            airplaneVehicle.GetInfo("Air Iran","780");
+            airplaneVehicle.GetInfo("Air Iran", "780");
 
             Gn<string> gn = new Gn<string>();
             gn.Name = "Ali";
@@ -71,12 +67,12 @@ namespace OOP
 
 
 
-            Pedar p= new Pedar();
+            Pedar p = new Pedar();
             Farzand F = new Farzand(8080);
             Console.WriteLine(p.Page);
             Console.WriteLine(F.Page);
-           var str =  p.GetInforamtion("Ahmad", "Admadi", "33");
-           Console.WriteLine(str);
+            var str = p.GetInforamtion("Ahmad", "Admadi", "33");
+            Console.WriteLine(str);
         }
     }
 }
@@ -88,7 +84,7 @@ public abstract class HyBaby
 }
 public abstract class HyBaby2
 {
-     public abstract override string ToString();
+    public abstract override string ToString();
 }
 
 public class Hu : HyBaby
@@ -160,7 +156,7 @@ public interface IUser
     void ShowName(string name);
 }
 
-public class test :IUser
+public class test : IUser
 {
     public void ShowName(string name)
     {
@@ -168,10 +164,12 @@ public class test :IUser
     }
 }
 
-public class Ob(string name, string family)
+public class Ob(string name, string family
 {
-    public string Name { get; set; } = name;
+    public string Name { get; set; }
     public string Family { get; set; } = family;
+    public string PName { get; set; }
+    public bool s { get; set; }
 }
 
 
@@ -204,7 +202,7 @@ public class Mobile : Computer
 
     public new void Year(string year)
     {
-       
+
         Console.WriteLine($"Mobile {year}");
     }
 }
@@ -237,11 +235,11 @@ public interface IStudent
 }
 public interface ITeacher
 {
-   void GetStr();
+    void GetStr();
 }
 
-public class strudentIntest: ITeacher,IStudent
-{ 
+public class strudentIntest : ITeacher, IStudent
+{
     void ITeacher.GetStr()
     {
         Console.WriteLine("Hi Teacher");
@@ -299,7 +297,7 @@ public class StudentOP : DataBase
 
 public class Vehicle<T> where T : IVehicle
 {
-    public virtual void GetInfo(string vehicleName , string speed)
+    public virtual void GetInfo(string vehicleName, string speed)
     {
         Console.WriteLine($"Information Name: {vehicleName} Speed : {speed}");
     }
@@ -312,7 +310,7 @@ public interface IVehicle
 
 public class AutomobileVehicle : Vehicle<Automobile>
 {
-  
+
 }
 
 public class MetroVehicle : Vehicle<Metro>
@@ -341,6 +339,13 @@ public class Airplane : IVehicle
 {
     public string Name { get; set; }
     public string Speed { get; set; }
+
+
+    public void Show()
+    {
+        var aa = Name + Speed;
+    }
+
 }
 
 
@@ -370,13 +375,15 @@ public class Pedar : BaseProp
         Console.WriteLine($"Family : {family}");
         Console.WriteLine($"Age : {age}");
 
+
+
         return $"{name} {family} {age}";
     }
 }
 
 public class Farzand : Pedar
 {
-    public int Age { get;private set; }
+    public int Age { get; private set; }
     public Farzand(int age)
     {
         Age = age;
@@ -389,4 +396,11 @@ public interface BaseProp
     public string Age { get; set; }
     public string Family { get; set; }
     string GetInforamtion(string name, string family, string age);
+}
+
+
+public class ks
+{
+    public string Name { get; set; }
+    public int Ks { get; set; }
 }

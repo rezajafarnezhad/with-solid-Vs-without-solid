@@ -15,23 +15,25 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetAll")]
-    public async Task<ApiResponse<List<User>>> Get()
+    public async Task<ApiResponse> Get()
     {
         var result = await _userRepository.GetList();
-        return new ApiResponse<List<User>>(true,ApiStatusCode.Success,result);
+        return new ApiResponse<List<User>>(true, ApiStatusCode.Success, result);
     }
 
     [HttpGet("GetById")]
-    public async Task<ApiResponse<User>> GetById([FromQuery]int id)
+    public async Task<ApiResponse> GetById([FromQuery]int id)
     {
         var result = await _userRepository.GetBy(id);
-        return new ApiResponse<User>(true, ApiStatusCode.Success,result);
+        return result != null ? new ApiResponse<User>(true, ApiStatusCode.Success, result) :
+            new ApiResponse(false, ApiStatusCode.NotFound);
     }
 
     [HttpGet("GetByEmail/{email}")]
-    public async Task<ApiResponse<User>> GetByEmail([FromRoute] string email)
+    public async Task<ApiResponse> GetByEmail([FromRoute] string email)
     {
         var result = await _userRepository.GetBy(email);
-        return new ApiResponse<User>(true, ApiStatusCode.Success, result);
+        return result !=null? new ApiResponse<User>(true, ApiStatusCode.Success, result):
+            new ApiResponse(false, ApiStatusCode.NotFound);
     }
 }
