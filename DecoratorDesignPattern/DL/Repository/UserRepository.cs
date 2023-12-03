@@ -2,6 +2,7 @@
 using DecoratorDesignPattern.CoreL.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace DecoratorDesignPattern.DL.Repository;
 
 public class UserRepository : IUserRepository
@@ -14,7 +15,8 @@ public class UserRepository : IUserRepository
 
     public async Task<User?> GetBy(int id)
     {
-        return await _context.Users.FindAsync(id);
+        var result = await _context.Users.FindAsync(id);
+        return result;
     }
 
 
