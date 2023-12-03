@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetByEmail/{email}")]
-    public async Task<IActionResult> GetById([FromRoute] string email)
+    public async Task<IActionResult> GetByEmail([FromRoute] string email)
     {
         var result = await _userRepository.GetBy(email);
         return Ok(result);

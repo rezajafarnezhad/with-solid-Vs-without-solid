@@ -1,5 +1,6 @@
 ﻿using System.Data.Common;
 using System.Reflection.PortableExecutable;
+using System.Xml;
 
 namespace OOP
 {
@@ -66,11 +67,46 @@ namespace OOP
             Gn<int> gn2 = new Gn<int>();
             gn2.Name = "hasan";
             gn2.Family = "javadi";
-            gn2.get(12);
+            gn2.get(222222);
 
+
+
+            Pedar p= new Pedar();
+            Farzand F = new Farzand(8080);
+            Console.WriteLine(p.Page);
+            Console.WriteLine(F.Page);
+           var str =  p.GetInforamtion("Ahmad", "Admadi", "33");
+           Console.WriteLine(str);
         }
     }
 }
+
+
+public abstract class HyBaby
+{
+    new public abstract string ToString();
+}
+public abstract class HyBaby2
+{
+     public abstract override string ToString();
+}
+
+public class Hu : HyBaby
+{
+    public override string ToString()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class ls : HyBaby2
+{
+    public override string ToString()
+    {
+        throw new NotImplementedException();
+    }
+}
+
 
 
 public class Student
@@ -321,3 +357,36 @@ public class Gn<T>
 }
 
 
+
+public class Pedar : BaseProp
+{
+    public int Page { get; set; }
+    public string Name { get; set; }
+    public string Age { get; set; }
+    public string Family { get; set; }
+    public string GetInforamtion(string name, string family, string age)
+    {
+        Console.WriteLine($"Name : {name}");
+        Console.WriteLine($"Family : {family}");
+        Console.WriteLine($"Age : {age}");
+
+        return $"{name} {family} {age}";
+    }
+}
+
+public class Farzand : Pedar
+{
+    public int Age { get;private set; }
+    public Farzand(int age)
+    {
+        Age = age;
+        Page = Age;
+    }
+}
+public interface BaseProp
+{
+    public string Name { get; set; }
+    public string Age { get; set; }
+    public string Family { get; set; }
+    string GetInforamtion(string name, string family, string age);
+}
