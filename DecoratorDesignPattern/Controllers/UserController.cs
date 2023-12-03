@@ -22,7 +22,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetById")]
-    public async Task<ApiResponse> GetById([FromQuery]int id)
+    public async Task<ApiResponse> GetById([FromQuery] int id)
     {
         var result = await _userRepository.GetBy(id);
         return result != null ? new ApiResponse<User>(true, ApiStatusCode.Success, result) :
@@ -33,7 +33,28 @@ public class UserController : ControllerBase
     public async Task<ApiResponse> GetByEmail([FromRoute] string email)
     {
         var result = await _userRepository.GetBy(email);
-        return result !=null? new ApiResponse<User>(true, ApiStatusCode.Success, result):
+        return result != null ? new ApiResponse<User>(true, ApiStatusCode.Success, result) :
             new ApiResponse(false, ApiStatusCode.NotFound);
+    }
+
+    [HttpPost]
+    public async Task<ApiResponse> Create([FromForm] User user)
+    {
+        await _userRepository.Create(user);
+        return new ApiResponse(true, ApiStatusCode.Success);
+    }
+
+    [HttpPut]
+    public async Task<ApiResponse> Update([FromForm] User user)
+    {
+        await _userRepository.Update(user);
+        return new ApiResponse(true, ApiStatusCode.Success);
+    }
+
+    [HttpPut("{userId}/{isActive}")]
+    public async Task<ApiResponse> ChangeStatus(int userId, bool isActive)
+    {
+        await _userRepository.ChangeStatus(userId, isActive);
+        return new ApiResponse(true, ApiStatusCode.Success);
     }
 }

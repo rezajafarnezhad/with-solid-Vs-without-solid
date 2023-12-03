@@ -29,4 +29,24 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users.ToListAsync();
     }
+
+
+    public async Task Create(User user)
+    {
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task Update(User user)
+    {
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task ChangeStatus(int userId,bool isActive)
+    {
+        var user = await _context.Users.SingleOrDefaultAsync(c => c.UserId == userId);
+        user.IsActive=isActive;
+        await _context.SaveChangesAsync();
+    }
 }

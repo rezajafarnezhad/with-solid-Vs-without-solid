@@ -52,4 +52,19 @@ public class CachingUserRepository : IUserRepository
 
             });
     }
+
+    public Task Create(User user)
+    {
+       return _userRepository.Create(user);
+    }
+
+    public Task Update(User user)
+    {
+        return _userRepository.Update(user);
+    }
+
+    public Task ChangeStatus(int userId, bool isActive)
+    {
+        return _userRepository.ChangeStatus(userId, isActive);
+    }
 }

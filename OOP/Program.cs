@@ -164,7 +164,7 @@ public class test : IUser
     }
 }
 
-public class Ob(string name, string family
+public class Ob(string name, string family)
 {
     public string Name { get; set; }
     public string Family { get; set; } = family;
