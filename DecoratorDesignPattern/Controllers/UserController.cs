@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices.ComTypes;
+using DecoratorDesignPattern.ActionFilter;
 using DecoratorDesignPattern.CoreL;
 using DecoratorDesignPattern.CoreL.Entities;
 using DecoratorDesignPattern.MediatR.GetByEmail;
@@ -22,6 +23,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetAll")]
+    [Log]
     public async Task<ApiResponse> Get()
     {
         //var result = await _userRepository.GetList();
