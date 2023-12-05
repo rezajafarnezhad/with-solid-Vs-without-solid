@@ -21,6 +21,8 @@ public class GetUserRequestHandLer : IRequestHandler<GetUsersRequest, List<User>
     public async Task<List<User>> Handle(GetUsersRequest request, CancellationToken cancellationToken)
     {
         var users = await _userRepository.GetList();
+        if (users is null)
+            throw new ArgumentNullException("کاربر یافت نشد");
         return users;
     }
 }

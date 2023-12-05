@@ -41,7 +41,6 @@ public class UserRepository : IUserRepository
         _context.Users.Update(user);
         await _context.SaveChangesAsync();
     }
-
     public async Task ChangeStatus(int userId,bool isActive)
     {
         var user = await _context.Users.SingleOrDefaultAsync(c => c.UserId == userId);

@@ -16,6 +16,10 @@ public class GetUserByEmailHandLerRequest : IRequestHandler<GetUserByEmailReques
     public async Task<User> Handle(GetUserByEmailRequest request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetBy(request.Email);
+        if (user is null)
+        {
+            throw new ArgumentNullException("ایمیل یافت نشد");
+        }
         return user;
     }
 }

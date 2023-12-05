@@ -10,3 +10,12 @@ public class User
     public string FullName { get; set; }
     public bool IsActive { get; set; }
 }
+
+
+public class UserTwo
+{
+     public int Age { get; set; }
+    public string Name { get; set; }
+    public bool IsActive { get; set; }
+}
+

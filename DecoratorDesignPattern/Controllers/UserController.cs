@@ -52,20 +52,26 @@ public class UserController : ControllerBase
     public async Task<ApiResponse> Create([FromForm] User user)
     {
         await _userRepository.Create(user);
-        return new ApiResponse(true,"خطا", ApiStatusCode.Success);
+        return new ApiResponse(true, ApiStatusCode.Success);
     }
 
     [HttpPut]
     public async Task<ApiResponse> Update([FromForm] User user)
     {
         await _userRepository.Update(user);
-        return new ApiResponse(true,"خطا", ApiStatusCode.Success);
+        return new ApiResponse(true, ApiStatusCode.Success);
     }
 
     [HttpPut("{userId}/{isActive}")]
     public async Task<ApiResponse> ChangeStatus(int userId, bool isActive)
     {
         await _userRepository.ChangeStatus(userId, isActive);
-        return new ApiResponse(true,"خطا", ApiStatusCode.Success);
+        return new ApiResponse(true, ApiStatusCode.Success);
+    }
+
+    [HttpGet("Filter")]
+    public  ApiResponse RedirectFilterUser()
+    {
+        return new ApiResponse(false, "شما فیلتر هستید", ApiStatusCode.BadRequest);
     }
 }

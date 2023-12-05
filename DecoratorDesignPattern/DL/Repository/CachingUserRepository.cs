@@ -15,7 +15,6 @@ public class CachingUserRepository : IUserRepository
         _userRepository = userRepository;
         _cache = cache;
     }
-    
     public Task<User?> GetBy(int id)
     {
         Console.WriteLine("<<<<<<<Id Caching>>>>>>>");
@@ -37,7 +36,6 @@ public class CachingUserRepository : IUserRepository
             {
                 cacheEntry.SetAbsoluteExpiration(CacheTime); 
                 return _userRepository.GetBy(email);
-
             });
     }
 
@@ -49,7 +47,6 @@ public class CachingUserRepository : IUserRepository
             {
                 cacheEntry.SetAbsoluteExpiration(CacheTime);
                 return _userRepository.GetList();
-
             });
     }
 

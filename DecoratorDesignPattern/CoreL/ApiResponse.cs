@@ -57,5 +57,4 @@ public enum ApiStatusCode
     ListEmpty = 590,
     [Display(Name = "خطای کاربر")]
     UserMistake = 290,
-
 }

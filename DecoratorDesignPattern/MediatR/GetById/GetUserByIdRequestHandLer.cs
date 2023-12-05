@@ -16,6 +16,8 @@ public class GetUserByIdRequestHandLer : IRequestHandler<GetUserByIdRequest, Use
     public async Task<User> Handle(GetUserByIdRequest request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetBy(request.Id);
+        if (user is null) 
+            throw new ArgumentNullException("کاربر یافت نشد");
         return user;
 
     }
