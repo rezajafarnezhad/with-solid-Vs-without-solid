@@ -78,7 +78,7 @@ namespace OOP
             var str = p.GetInforamtion("Ahmad", "Admadi", "33");
             Console.WriteLine(str);
 
-            C c = new C("a");
+            
 
 
         }

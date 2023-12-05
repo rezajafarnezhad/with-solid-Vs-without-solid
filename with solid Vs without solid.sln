@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Static", "Static\Static.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDispose", "IDispose\IDispose.csproj", "{9D5671DF-1F75-40DF-9CC4-EC6171D8AC72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOP", "AOP\AOP.csproj", "{F25D4C3B-FADC-4EE5-ADEF-32473D01D262}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOP", "AOP\AOP.csproj", "{F25D4C3B-FADC-4EE5-ADEF-32473D01D262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{386A8678-9AFC-43AD-9C37-DBD960A34C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP\OOP.csproj", "{386A8678-9AFC-43AD-9C37-DBD960A34C60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{BBBD9FA5-34E6-42A4-B08B-E5186E7BE259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorDesignPattern", "DecoratorDesignPattern\DecoratorDesignPattern.csproj", "{BBBD9FA5-34E6-42A4-B08B-E5186E7BE259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

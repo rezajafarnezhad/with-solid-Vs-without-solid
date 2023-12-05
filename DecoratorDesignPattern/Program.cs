@@ -1,8 +1,12 @@
 
+using System.Reflection;
 using DecoratorDesignPattern.CoreL;
 using DecoratorDesignPattern.DL;
 using DecoratorDesignPattern.DL.Repository;
+using DecoratorDesignPattern.MediatR.GetUsers;
 using DecoratorDesignPattern.Middleware;
+using MediatR;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -24,8 +28,9 @@ namespace DecoratorDesignPattern
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.Decorate<IUserRepository, CachingUserRepository>();
-
-
+            builder.Services.AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssembly(typeof(GetUsersRequest).Assembly);
+            });
             builder.Services.AddMemoryCache();
             var app = builder.Build();
             if (app.Environment.IsDevelopment())
