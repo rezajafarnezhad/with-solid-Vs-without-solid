@@ -6,22 +6,20 @@ namespace DecoratorDesignPattern.CoreL;
 
 public class ApiResponse
 {
+    public ApiResponse(bool status,string message, ApiStatusCode statusCode)
+    {
+        this.status = status;
+        StatusCode = statusCode;
+        Message = message;
+    }
     public ApiResponse(bool status, ApiStatusCode statusCode)
     {
         this.status = status;
-        if (status)
-        {
-            Message = "موفق";
-        }
-        else
-        {
-            Message = "ناموفق";
-        }
         StatusCode = statusCode;
+        Message = "موفق";
     }
-
     public bool status { get; }
-    public string Message { get; }
+    public string Message { get; } = "موفق";
     public ApiStatusCode StatusCode { get; }
 
 }
@@ -29,8 +27,12 @@ public class ApiResponse
 public class ApiResponse<T> : ApiResponse
 {
     public T Data { get; }
-    public ApiResponse(bool status, ApiStatusCode statusCode, T data) 
-        : base(status, statusCode)
+
+    public ApiResponse(bool status, string message, ApiStatusCode statusCode, T data) : base(status, message, statusCode)
+    {
+        Data = data;
+    }
+    public ApiResponse(bool status, ApiStatusCode statusCode, T data) : base(status, statusCode)
     {
         Data = data;
     }

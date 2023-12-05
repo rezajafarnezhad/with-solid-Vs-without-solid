@@ -15,7 +15,7 @@ public class CachingUserRepository : IUserRepository
         _userRepository = userRepository;
         _cache = cache;
     }
-
+    
     public Task<User?> GetBy(int id)
     {
         Console.WriteLine("<<<<<<<Id Caching>>>>>>>");

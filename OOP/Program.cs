@@ -1,4 +1,7 @@
-﻿namespace OOP
+﻿using System.Runtime.Intrinsics.X86;
+using System.Xml.Schema;
+
+namespace OOP
 {
     internal class Program
     {
@@ -43,6 +46,7 @@
             Iteacher.GetStr();
 
             IStudent isStudent = strudentIntest;
+            strudentIntest stu = isStudent as strudentIntest;
             isStudent.GetStr();
 
             AutomobileVehicle authAutomobileVehicle = new AutomobileVehicle();
@@ -73,6 +77,10 @@
             Console.WriteLine(F.Page);
             var str = p.GetInforamtion("Ahmad", "Admadi", "33");
             Console.WriteLine(str);
+
+            C c = new C("a");
+
+
         }
     }
 }
@@ -210,6 +218,7 @@ public class Mobile : Computer
 
 public abstract class DataBase
 {
+
     private readonly string ConnectionString = "DataSurce=.;InitalCatalog =studentDb;";
 
     public void OpentConnection()
@@ -340,7 +349,6 @@ public class Airplane : IVehicle
     public string Name { get; set; }
     public string Speed { get; set; }
 
-
     public void Show()
     {
         var aa = Name + Speed;
@@ -404,3 +412,5 @@ public class ks
     public string Name { get; set; }
     public int Ks { get; set; }
 }
+
+

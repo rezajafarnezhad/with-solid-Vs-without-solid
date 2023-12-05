@@ -2,6 +2,7 @@
 using DecoratorDesignPattern.CoreL;
 using DecoratorDesignPattern.DL;
 using DecoratorDesignPattern.DL.Repository;
+using DecoratorDesignPattern.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -40,6 +41,7 @@ namespace DecoratorDesignPattern
 
             app.MapControllers();
 
+            app.UseApiCustomExceptionHandler();
             app.Run();
         }
     }

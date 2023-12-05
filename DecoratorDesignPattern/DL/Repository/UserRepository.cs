@@ -30,7 +30,6 @@ public class UserRepository : IUserRepository
         return await _context.Users.ToListAsync();
     }
 
-
     public async Task Create(User user)
     {
         _context.Users.Add(user);
@@ -46,6 +45,8 @@ public class UserRepository : IUserRepository
     public async Task ChangeStatus(int userId,bool isActive)
     {
         var user = await _context.Users.SingleOrDefaultAsync(c => c.UserId == userId);
+        if (user is null)
+            throw new ArgumentNullException("مقدار وارد شده اشتباه است");
         user.IsActive=isActive;
         await _context.SaveChangesAsync();
     }
